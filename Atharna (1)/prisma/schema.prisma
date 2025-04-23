@@ -1,0 +1,100 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  Fname     String
+  Lname     String
+  email     String   @unique
+  password  String
+  points    Int
+  type      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  posts Post[]
+
+}
+
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String
+  content   String
+  status    String  @default("PENDING") // Can be "APPROVED" or "REJECTED"
+  deleted   Boolean  @default(false) // 👈 Add this line
+  userId    Int
+  imageUrl  String? // ✅ Add this field to store image URLs
+  user   User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+enum Category {
+  CITYS_HISTORY
+  COPTIC
+  GREEK
+  HISTORIC
+  ISLAMIC
+  MILITARY
+  OTTOMAN
+  PHARAONIC
+  ROMANIAN
+  ROYAL
+  SUNKEN
+  UNKNOWN
+}
+
+enum Governorate {
+  ALEXANDRIA
+  ASWAN
+  ASYUT
+  BEHIRA
+  BENI_SUEF
+  CAIRO
+  DAKAHLIA
+  DUMYETTA
+  FAYOUM
+  GHARBIA
+  GIZA
+  ISMAILIA
+  KAFR_ELSHEIKH
+  LUXOR
+  MATRUH
+  MINYA
+  MONOFIA
+  NEW_VALLEY
+  NORTH_SINAI
+  PORTSAID
+  QALYUBIA
+  QENNA
+  RED_SEA
+  SHARQIA
+  SOUTH_SINAI
+  SUEZ
+  SUHAG
+}
+
+model Museum {
+  id          Int         @id @default(autoincrement())
+  name        String
+  type        Category    @default(UNKNOWN)
+  location    Governorate @default(CAIRO)
+  info        String
+  ticketPrice Int
+}

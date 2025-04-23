@@ -1,0 +1,173 @@
+/* AdminMuseums.css - Ultra Modern Egyptian */
+:root {
+  --gold: #d4af37; /* Brighter gold */
+  --sand: #f8f4e8; /* Warmer sand */
+  --papyrus: #fffff7;
+  --nile: #487a3f; /* Deeper green */
+  --ochre: #b34a2e; /* Burnt orange */
+  --slate: #2c3e4f;
+  --light: #ffffff;
+}
+
+.admin-museums-container {
+  padding: 2rem max(5%, 2rem);
+  font-family: 'Georgia', serif; /* Serif font for a cheque-like feel */
+  background: var(--light);
+  min-height: 100vh;
+}
+
+.admin-museums-container h1 {
+  color: var(--slate);
+  text-align: center;
+  font-size: clamp(0rem, 3vw, 2rem);
+  font-weight: 600;
+  position: relative;
+}
+
+.admin-museums-container h1::after {
+  content: "𓃭"; /* Egyptian hieroglyph */
+  display: block;
+  color: var(--gold);
+  font-size: 4em;
+  
+}
+
+.admin-museums-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+  font-size: 0.95rem;
+  background: var(--light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.admin-museums-table th,
+.admin-museums-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.admin-museums-table th {
+  background: var(--light);
+  color: var(--slate);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.admin-museums-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-museums-table tbody tr:hover {
+  background: var(--sand);
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.action-buttons button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-update-info {
+  background: var(--nile);
+  color: white;
+}
+
+.btn-update-price {
+  background: var(--gold);
+  color: var(--slate);
+}
+
+.btn-delete {
+  background: var(--ochre);
+  color: white;
+}
+
+/* Edit Styles */
+.edit-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border 0.2s;
+}
+
+.edit-input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.price-edit-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.price-input {
+  width: 6rem;
+  padding: 0.75rem;
+}
+
+/* Utility Classes */
+.error-message {
+  background: #fff0f0;
+  color: var(--ochre);
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.no-data-message {
+  text-align: center;
+  padding: 3rem;
+  color: rgba(0,0,0,0.4);
+  font-size: 0.95rem;
+}
+
+/* Micro-interactions */
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-museums-table {
+    font-size: 0.9rem;
+  }
+  
+  .admin-museums-table th,
+  .admin-museums-table td {
+    padding: 1rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .action-buttons button {
+    width: 100%;
+  }
+}

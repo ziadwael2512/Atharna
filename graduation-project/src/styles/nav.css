@@ -1,0 +1,261 @@
+/* Navbar الأساسي */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+  background: linear-gradient(45deg, #F4F1E0, #D4AF37);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* عند التمرير يقل الحجم */
+.navbar-container.scrolled {
+  padding: 0px 10px;
+  background: linear-gradient(45deg, #F4F1E0, #C29B2E);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  width: 85%;
+  top: 2%;
+  right: 7%;
+  /* transform: translate(100px, 18px); */
+}
+
+/* تقليل حجم اللوجو */
+.logo {
+  width: 180px;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-container.scrolled .logo {
+  width: 100px; /* تصغير اللوجو */
+}
+
+/* تصغير الخطوط */
+.nav-item {
+  font-size: 18px;
+  transition: font-size 0.3s ease-in-out;
+}
+
+.navbar-container.scrolled .nav-item {
+  font-size: 16px;
+}
+
+  
+  .navbar-container:hover {
+    background-color: #9E2A2F;
+  }
+  
+  /* Logo styling */
+  .logo-container {
+    display: flex;
+  }
+  
+  .logo {
+    width: 180px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+  
+  .logo-container:hover .logo {
+    transform: scale(1.1);
+}
+  
+  /* Navbar links */
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    background-color: transparent;
+  }
+  .navbar button {
+    border: none;
+    background-color: transparent;
+  }
+  .nav-item {
+    text-decoration: none;
+    color: #9E2A2F; /* Deep red */
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    padding: 8px 20px;
+    margin: 0 15px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav-item:hover {
+    color: #FFF; /* White text on hover */
+    background-color: #D4AF37; /* Soft golden background */
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-item::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #9E2A2F;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+  
+  .nav-item:hover::after {
+    transform: scaleX(1); /* Underline animation on hover */
+  }
+  /* Additional unique effects for the "Create Post" link */
+.nav-item.create {
+  font-weight: 600;
+  letter-spacing: 1px; /* Slightly wider letters */
+  background: linear-gradient(135deg, #9E2A2F 30%, #D4AF37 90%); /* Gradient background */
+  color: #FFF;
+  padding: 10px 25px; /* Slightly larger padding */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 40px; /* More rounded corners */
+}
+
+.nav-item.create:hover {
+  background: linear-gradient(60deg, #D4AF37 30%, #9E2A2F 90%);
+  transform: translateY(-5px); /* Slightly stronger lift effect */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-item.create::after {
+  background-color: transparent; /* Different underline color */
+}
+
+.nav-item.create:hover::after {
+  transform: scaleX(1);
+}
+  
+  /* Active item styling */
+  .nav-item.active {
+    color: #D4AF37; /* Gold active color */
+    border-bottom: 3px solid #D4AF37; /* Gold underline */
+  }
+  
+  .nav-item.auth {
+    font-weight: 600;
+    padding: 10px 25px;
+    border: 2px solid #9E2A2F;
+    /* border-radius: 30px; */
+    background-color: transparent;
+    color: #9E2A2F;
+    transition: all 0.3s ease-in-out;
+}
+  
+  .nav-item.auth:hover {
+    background-color: #9E2A2F; /* Deep red background on hover */
+    color: #FFF; /* White text on hover */
+    transform: translateY(-3px); /* Lift effect */
+  }
+  .nav-item.auth::after{
+    height: 0;
+  }
+
+
+
+/* for logout */
+.user-menu {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+.user-menu:hover {
+  /* background: rgba(158, 42, 47, 0.1); */
+}
+
+.user-icon {
+  font-size: 35px;
+  color: #9E2A2F;
+  margin-right: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.username {
+  font-weight: bold;
+  color: #3E2723;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.username:hover {
+  color: #9E2A2F;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: white;
+  min-width: 150px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  right: 0;
+  border-radius: 5px;
+  padding: 8px 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.user-menu .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  
+}
+
+.dropdown-content button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-weight: bold;
+  color: #9E2A2F;
+}
+
+.dropdown-content button:hover {
+  background-color: #f1f1f1;
+}
+
+
+  /* Make navbar responsive */
+  @media (max-width: 768px) {
+    .navbar-container{
+      position: relative;
+    }
+    .navbar {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .nav-item {
+      margin: 10px 0;
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+    .nav-item.create {
+      margin: 10px 0;
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+    .logo {
+      width: 120px; /* Smaller logo on mobile */
+    }
+  }
+  
+
+  

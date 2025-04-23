@@ -1,0 +1,192 @@
+.museum-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .museum-detail h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  
+  .museum-detail p {
+    font-size: 1.25rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .museum-detail {
+      padding: 20px 15px;
+    }
+  
+    .museum-detail h1 {
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+  
+    .museum-detail p {
+      font-size: 1.1rem;
+    }
+
+  }
+  
+  @media (max-width: 480px) {
+    .museum-detail h1 {
+      font-size: 1.8rem;
+    }
+  
+    .museum-detail p {
+      font-size: 1rem;
+    }
+  
+   
+  }
+  /* Meta Info */
+.museum-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.museum-type {
+  background-color: #f0a500;
+  color: #000;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.museum-type.art { background-color: #ff7675; }
+.museum-type.history { background-color: #74b9ff; }
+.museum-type.science { background-color: #55efc4; color: #000; }
+
+.museum-location {
+  color: #636e72;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.museum-location::before {
+  content: "📍";
+  margin-right: 0.25rem;
+}
+
+.museum-price {
+  color: #00b894;
+  font-weight: bold;
+}
+
+/* Content */
+.museum-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.museum-info {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+.museum-footer {
+  margin-top: 3rem;
+  text-align: center;
+}
+.back-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background-color: #f0a500;
+  transform: translateX(-5px);
+}
+
+/* Loading and Error States */
+.loading-container,
+.error-container,
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  text-align: center;
+}
+
+.loading-spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #f0a500;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container h2,
+.not-found h2 {
+  color: #d63031;
+  margin-bottom: 1rem;
+}
+
+.error-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.error-buttons button,
+.not-found button {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.error-buttons button:hover,
+.not-found button:hover {
+  background-color: #f0a500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .museum-detail {
+    padding: 1rem;
+  }
+  
+  .museum-header h1 {
+    font-size: 2rem;
+  }
+  
+
+}

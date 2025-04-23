@@ -1,0 +1,119 @@
+/* .feed-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  justify-items: center;
+} */
+
+.feed-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+
+.styled-post-card {
+  background-color: #ffffff;
+  border: 2px solid #CBBF99;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 500px; /* أو أي عرض مناسب */
+  width: 100%; /* يخليه مرن حسب الشاشة */
+  word-wrap: break-word;
+}
+
+
+.styled-post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #9E2A2F; /* egypt-red */
+}
+
+.post-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1D6A6B; /* egypt-green */
+  margin-bottom: 12px;
+}
+
+.post-date {
+  font-size: 12px;
+  color: #3E2723; /* clary */
+}
+
+.post-content {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.post-image {
+  width: 100%;
+  max-height:300px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.like-button, .comment-button {
+  background-color: #1D6A6B; /* egypt-green */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.like-button:hover, .comment-button:hover {
+  background-color: #9E2A2F; /* egypt-red */
+}
+
+.cta-button {
+  background-color: #D4AF37; /* egypt-gold */
+  color: #000000; /* black */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #9E2A2F; /* egypt-red */
+}
+
+/* @media (min-width: 768px) {
+  .feed-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+} */

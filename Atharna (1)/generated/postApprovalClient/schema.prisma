@@ -1,0 +1,16 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("POST_APPROVAL_DATABASE_URL") // Second database
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/postApprovalClient" // Generate a separate Prisma client
+}
+
+model Post {
+  id       Int     @id @default(autoincrement())
+  title    String
+  content  String
+  approved Boolean @default(false)
+}

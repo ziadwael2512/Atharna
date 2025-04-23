@@ -1,0 +1,128 @@
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: #9e2a2f;
+  height: 100vh;
+  
+}
+
+.auth-box {
+  box-shadow: 0 12px 24px #9e652f;
+}
+
+.auth-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px #9e652f;
+}
+
+.auth-title {
+  font-size: 2rem;
+  color: #9e2a2f;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.auth-field {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.auth-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #9e2a2f;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.auth-input:focus {
+  border-color: #d4af37;
+  outline: none;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+/* 🔹 Buttons */
+.auth-button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #d4af37;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+  background: #b8952e;
+  transform: translateY(-2px);
+}
+
+.login-btn {
+  background: #ffcc4d;
+  border: 2px solid #6b3e1d;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 15px auto;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #e6b800;
+  transform: scale(1.1);
+}
+
+/* 🔹 Links */
+.auth-text {
+  margin-top: 1.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.auth-link {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+  color: #9e2a2f;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 600px) {
+  .auth-box {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .auth-title {
+    font-size: 1.5rem;
+  }
+
+  .auth-input {
+    padding: 0.7rem;
+  }
+
+  .auth-button {
+    padding: 0.7rem;
+  }
+}

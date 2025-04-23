@@ -1,0 +1,25 @@
+/* :root {
+    --egypt-gold: #D4AF37;
+    --egypt-red: #9E2A2F;
+    --egypt-green: #1D6A6B;
+    --off-white: #F4F1E0;
+    --Desert Sand: #CBBF99;    
+    --black: #000000;    
+    --clary: #3E2723;
+
+}
+How to Use:
+Backgrounds: Use Sandy Beige or Ivory for backgrounds to keep the design warm and neutral.
+Accents: Apply Gold and Turquoise for buttons, headers, and highlights to give a regal and vibrant feel.
+Text: Use Black or Deep Red for strong contrast and readability.
+Call-to-Actions (CTAs): Bright Red or Turquoise to attract attention while maintaining thematic consistency.
+Icons/Details: Gold for intricate details or icons representing Egyptian symbols like Ankh, Eye of Horus, or pyramids.
+This combination of rich and historical colors will help immerse visitors in the ancient Egyptian theme while keeping the site modern and usable.
+.cta-button {
+    background-color: var(--egypt-gold);
+} */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }

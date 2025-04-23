@@ -1,0 +1,170 @@
+/* User.css */
+.dashboard {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #9e652f;
+    color: white;
+    padding: 20px;
+    height: 100;
+  }
+  
+  .sidebar-title {
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  
+  a {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  
+  a:hover{
+    color: #9e2a2f;
+  }
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-item {
+    margin: 15px 0;
+    cursor: pointer;
+    font-weight: 600;
+    color: whitesmoke;
+  }
+  
+  .sidebar-item:hover {
+    color: #9e2a2f;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  /* UserTable.css */
+  
+  /* Container styling */
+  .user-table-container {
+    text-align: center;
+    padding: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+    font-family: 'Georgia', serif; /* Serif font for a cheque-like feel */
+    background-color: #f8f8f8; /* Light background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  /* Table styling */
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff; /* White background for the table */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0; /* Light border for the table */
+  }
+  
+  /* Table header styling */
+  .user-table thead {
+    background-color: #9e652f; /* Warm brown from the dashboard */
+    color: white; /* White text for contrast */
+  }
+  
+  .user-table th {
+    padding: 15px 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  /* Table body styling */
+  .user-table tbody tr {
+    border-bottom: 1px solid #e0e0e0; /* Light border between rows */
+  }
+  
+  .user-table tbody tr:last-of-type {
+    border-bottom: none; /* Remove border for the last row */
+  }
+  
+  /* Hover effect for rows */
+  .user-table tbody tr:hover {
+    background-color: #f5e6d8; /* Light warm tone for hover, matching the dashboard */
+    cursor: pointer;
+  }
+  
+  /* Selected row styling */
+  .user-table tbody tr.selected {
+    background-color: #e8d5c4; /* Slightly darker warm tone for selected rows */
+  }
+  
+  .user-table td {
+    padding: 15px 20px;
+    color: #555; /* Medium gray for text */
+    font-size: 15px;
+  }
+  
+  /* Loading and error message styling */
+  .loading-message,
+  .error-message {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #555;
+    font-style: italic; /* Italic for a softer look */
+  }
+  
+  .error-message {
+    color: #9e2a2f; /* Reddish-brown from the dashboard for errors */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .user-table th,
+    .user-table td {
+        padding: 12px 15px;
+    }
+  
+    .user-table-container {
+        padding: 15px;
+    }
+  }
+  
+  /* Action buttons styling */
+  .action-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 2px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .change-role-button {
+    background-color: #9e652f; /* Warm brown from the dashboard */
+    color: white;
+  }
+  
+  .change-role-button:hover {
+    background-color: #8a5730; /* Slightly darker brown on hover */
+  }
+  
+  .delete-button {
+    background-color: #9e2a2f; /* Reddish-brown from the dashboard */
+    color: white;
+  }
+  
+  .delete-button:hover {
+    background-color: #8a2428; /* Slightly darker reddish-brown on hover */
+  }
+  
+  /* Prevent buttons from triggering row click */
+  .action-button {
+    pointer-events: auto; /* Ensure buttons are clickable */
+  }

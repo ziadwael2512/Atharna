@@ -1,0 +1,205 @@
+/* الحاوية الأساسية للصفحة */
+.ancient-sands {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: 100px; /* علشان يبعد المحتوى عن النافبار */
+}
+
+/* تقسيم الصفحة إلى الشريط الجانبي والمحتوى */
+.pharaohs-treasure {
+  display: flex;
+  flex: 1;
+}
+
+/* الشريط الجانبي للفلاتر */
+.golden-scroll {
+  position: relative;
+  width: 200px;
+  padding: 20px;
+}
+
+/* محتوى الفلاتر */
+.hieroglyph-filters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* زرار إظهار/إخفاء الفلاتر */
+.filter-toggle {
+  background-color: #9e2a2f; /* لون أحمر فرعوني */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* تأثير عند المرور على زرار الفلتر */
+.filter-toggle:hover {
+  background-color: #d4af37; /* لون ذهبي */
+}
+
+/* أيقونة زرار الفلتر */
+.filter-icon {
+  font-size: 24px;
+  color: #fff;
+}
+
+/* قائمة الفلاتر */
+.hieroglyph-filters ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+/* عنصر داخل قائمة الفلاتر */
+.hieroglyph-filters ul li {
+  cursor: pointer;
+  padding: 10px;
+  font-size: larger;
+  font-weight: 600;
+  color: #9e2a2f;
+  margin-bottom: 5px;
+}
+
+/* تأثير عند المرور على الفلتر */
+.hieroglyph-filters ul li:hover {
+  background-color: #d4af37;
+}
+
+/* شبكة عرض الكروت */
+.pyramid-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 أعمدة */
+  gap: 30px;
+  padding: 20px;
+  flex: 1;
+}
+
+/* الكارت */
+.sphinx-card {
+  width: 380px;
+  height: 400px;
+  perspective: 1000px; /* علشان التأثير 3D */
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* الوجهين الأمامي والخلفي للكارت */
+.sphinx-card .obverse-side,
+.sphinx-card .reverse-side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden; /* يخفي الوجه الخلفي أثناء التدوير */
+  transition: transform 0.6s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل ناعم */
+  border-radius: 10px;
+ overflow: hidden;
+ box-sizing: border-box;
+ width: 100%;
+ height: 100%;
+ overflow-y:auto; /* Allow scrolling only if absolutely necessary */
+ padding-right: 5px; /* Prevent scrollbar from overlapping content */
+ 
+}
+
+/* وجه الكارت الأمامي */
+.sphinx-card .obverse-side {
+  background-color: #fff;
+  color: #9e2a2f;
+}
+
+/* وجه الكارت الخلفي */
+.sphinx-card .reverse-side {
+  background-color: #9e2a2f;
+  color: #fff;
+  transform: rotateY(180deg); /* مقلوب */
+}
+
+.sphinx-card .reverse-side.p {
+  font-weight: 1000;
+}
+
+/* لما تمر على الكارت يتقلب */
+.sphinx-card:hover .obverse-side {
+  transform: rotateY(180deg);
+}
+.sphinx-card:hover .reverse-side {
+  transform: rotateY(0deg);
+}
+
+/* الشاشات المتوسطة */
+@media (max-width: 1200px) {
+  .pyramid-gallery {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sphinx-card {
+      width: 300px;
+  }
+}
+
+/* التابلت */
+@media (max-width: 992px) {
+  .pharaohs-treasure {
+      flex-direction: column;
+  }
+
+  .golden-scroll {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .pyramid-gallery {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+  }
+
+  .sphinx-card {
+      width: 100%;
+      max-width: 350px;
+      margin: 10px auto;
+  }
+}
+
+/* الموبايل */
+@media (max-width: 768px) {
+  .pyramid-gallery {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 15px;
+  }
+
+  .sphinx-card {
+      height: 250px;
+  }
+
+  .hieroglyph-filters ul li {
+      font-size: medium;
+  }
+}
+
+/* الموبايل الصغير */
+@media (max-width: 480px) {
+  .sphinx-card {
+      height: 200px;
+  }
+
+  .hieroglyph-filters ul li {
+      font-size: small;
+  }
+}
