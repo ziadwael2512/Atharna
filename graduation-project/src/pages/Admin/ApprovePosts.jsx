@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "../../styles/ApprovePosts.css"
+import Sidebar from '../../components/Sidebar'
 
 function ApprovePosts() {
   const [posts, setPosts] = useState([]);
@@ -29,16 +30,7 @@ function ApprovePosts() {
   
 
   const approvePost = async (postId) => {
-    // try {
-    //   const token = localStorage.getItem('token');
-    //   await axios.put(`http://localhost:5000/api/admin/posts/${postId}/approve`, {}, {
-    //     headers: { 'Authorization': `Bearer ${token}` },
-    //   });
-    //   setPosts(posts.filter(post => post.id !== postId));
-    // } catch (err) {
-    //   setError('error in approve');
-    // }
-
+  
         try {
       const token = localStorage.getItem('token');
       await axios.put(`http://localhost:5000/api/posts/${postId}/approve`, {}, {
@@ -50,10 +42,16 @@ function ApprovePosts() {
     }
   };
 
-  if (loading) return <p>loading</p>;
-  if (error) return <p>{error}</p>;
+// In your ApprovePosts.js
+if (loading) return <p className="loading">Loading posts...</p>;
+if (error) return <p className="error">{error}</p>;
+
+// ... and for the empty state:
+<p className="empty-state">No pending posts found</p>
 
   return (
+  <div>
+    <Sidebar />
     <div className="approve-posts-container">
       <h2>posts</h2>
       {posts.length === 0 ? (
@@ -70,6 +68,7 @@ function ApprovePosts() {
           ))}
         </ul>
       )}
+    </div>
     </div>
   );
 }

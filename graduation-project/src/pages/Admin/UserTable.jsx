@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../styles/User.css"; // استيراد ملف الـ CSS
-
+import Sidebar from "../../components/Sidebar";
 const UserTable = () => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -96,6 +96,8 @@ const UserTable = () => {
     };
 
     return (
+        <div>
+    <Sidebar />
         <div className="user-table-container">
             <h1>User List</h1>
             {loading ? (
@@ -151,6 +153,7 @@ const UserTable = () => {
                     </tbody>
                 </table>
             )}
+        </div>
         </div>
     );
 };
